@@ -1,0 +1,22 @@
+{
+  "name": "refreshing-webpack",
+  "version": "1.0.0",
+  "description": "a small project used for refreshing myself with using webpack",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack",
+    "watch": "./node_modules/.bin/webpack -w"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "Richard Hpa",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
