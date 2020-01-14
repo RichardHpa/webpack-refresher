@@ -19,4 +19,8 @@ npm run build
 
 # Build using watch
 npm run watch
+
+# Run a Development Server on port 9000
+npm run start:dev
+# You can change the port by editing the webpack.config.js file
 ```
