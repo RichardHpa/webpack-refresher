@@ -2,3 +2,9 @@ h1{
     font-family: Arial;
     color: salmon;
 }
+
+#image{
+    background: url(../images/toast.jpg);
+    width: 300px;
+    height: 300px;
+}
