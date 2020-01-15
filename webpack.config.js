@@ -1,9 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+
+
 
 module.exports = {
     entry: './src/index.js',
-    mode: 'development',
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
@@ -11,14 +14,15 @@ module.exports = {
     optimization: {
         splitChunks: {
             chunks: 'all'
-        }
+        },
+        minimizer: [new UglifyJsPlugin()]
     },
     plugins: [new HtmlWebpackPlugin({
             hash: true,
             title: 'My Awesome application',
             myPageHeader: 'Hello World',
             template: './src/index.html',
-            filename: 'index.html' //relative to root of the application
+            filename: 'index.html'
     })],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
