@@ -1,15 +1,25 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: {
-        about: './src/about.js',
-        contact: './src/contact.js'
-    },
+    entry: './src/index.js',
     mode: 'development',
     output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist/js')
+        filename: 'main.js',
+        path: path.resolve(__dirname, 'dist')
     },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
+    plugins: [new HtmlWebpackPlugin({
+            hash: true,
+            title: 'My Awesome application',
+            myPageHeader: 'Hello World',
+            template: './src/index.html',
+            filename: 'index.html' //relative to root of the application
+    })],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         port: 9000

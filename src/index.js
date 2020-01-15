@@ -5,7 +5,7 @@ import './css/style.css';
 const Greeting = () => {
     return (
         <div>
-            <h1>Hello from React</h1>
+            <h2>Hello from React</h2>
             <div id="image"></div>
         </div>
     )
